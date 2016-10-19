@@ -29,3 +29,4 @@ end
 gem 'coveralls', require: false
 
 gem 'mongoid'
+gem "bullet", :group => "development"
