@@ -1,6 +1,7 @@
 class Monologue::Post
   include Mongoid::Document
   include Mongoid::Timestamps
+  ROOT_PATH = Monologue::Engine.routes.url_helpers.root_path
 
   has_many :taggings, class_name: 'Monologue::Tagging'
   has_and_belongs_to_many :tags,
@@ -56,7 +57,7 @@ class Monologue::Post
   end
 
   def full_url
-    "#{Monologue::Engine.routes.url_helpers.root_path}#{url}"
+    "#{ROOT_PATH}#{url}"
   end
 
   def published_in_future?
