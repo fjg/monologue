@@ -2,7 +2,9 @@
 class Monologue::PostsController < Monologue::ApplicationController
   def index
     @page = params[:page].nil? ? 1 : params[:page]
-    @posts = posts_for_site.page(@page).includes(:user).published
+    @posts = posts_for_site.page(@page)
+                           .includes(:user, :tags)
+                           .published
   end
 
   def show

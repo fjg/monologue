@@ -29,8 +29,6 @@ class Monologue::Post
            .order([[:published_at, :desc]])
   }
 
-  default_scope -> { includes(:tags) }
-
   validates :user_id, presence: true
   validates :site_id, presence: true
   validates :title, :content, :url, :published_at, presence: true

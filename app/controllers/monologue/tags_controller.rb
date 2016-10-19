@@ -4,7 +4,7 @@ class Monologue::TagsController < Monologue::ApplicationController
     @tag = retrieve_tag
     if @tag
       @page = nil
-      @posts = @tag.posts_with_tag
+      @posts = @tag.posts_with_tag.includes(:user, :tags)
     else
       redirect_to :root, notice: "No post found with label \"#{params[:tag]}\""
     end
