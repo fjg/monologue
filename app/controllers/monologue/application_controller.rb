@@ -44,10 +44,13 @@ class Monologue::ApplicationController < ApplicationController
   end
 
   def all_tags
-    @tags = tags_for_site.order([:name, :asc]).select { |t| t.frequency > 0 }
+    @tags = tags_for_site.where(:posts_count.gt => 0)
+                          .order([:name, :asc])
+                          .entries
+
     # could use minmax here but it's only supported with ruby > 1.9'
-    @tags_frequency_min = @tags.map(&:frequency).min
-    @tags_frequency_max = @tags.map(&:frequency).max
+    @tags_frequency_min = @tags.map(&:posts_count).min
+    @tags_frequency_max = @tags.map(&:posts_count).max
   end
 
   def not_found

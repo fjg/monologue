@@ -14,8 +14,12 @@ module Monologue
 
     def size_for_tag(tag, min, max)
       #logarithmic scaling based on the number of occurrences of each tag
-      if min<max && tag.frequency>0
-        1 + ((NUMBER_OF_LABEL_SIZES-1)*(log_distance_to_min(tag.frequency, min))/log_distance_to_min(max, min)).round
+      if min<max && tag.posts_count>0
+        1 + (
+          (NUMBER_OF_LABEL_SIZES-1) *
+          (log_distance_to_min(tag.posts_count, min)) /
+          log_distance_to_min(max, min)
+        ).round
       else
         1
       end

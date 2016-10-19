@@ -4,10 +4,12 @@ class Monologue::Tag
 
   has_many :taggings, class_name: 'Monologue::Tagging'
   has_and_belongs_to_many :posts, class_name: 'Monologue::Post'
+
   belongs_to :site, class_name: 'Monologue::Site'
 
   field :name, type: String
   field :name_downcase, type: String
+  field :posts_count, type: Integer, default: 0
 
   validates :name, uniqueness: true, presence: true
 
@@ -21,13 +23,15 @@ class Monologue::Tag
 
   before_save do
     self.name_downcase = name.to_s.downcase
+    update_posts_count
+  end
+
+  def update_posts_count
+    self.posts_count = posts_with_tag.size
   end
 
   def posts_with_tag
     posts.published
   end
 
-  def frequency
-    posts_with_tag.size
-  end
 end

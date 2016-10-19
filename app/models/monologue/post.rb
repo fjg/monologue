@@ -50,7 +50,10 @@ class Monologue::Post
 
   def tag!(tags_attr)
     self.tags = tags_attr.map(&:strip).reject(&:blank?).map do |tag|
-      Monologue::Tag.where(name: tag, site: site.id).first_or_create
+      tag = Monologue::Tag.where(name: tag, site: site.id).first_or_create
+      tag.update_posts_count
+      tag.save
+      tag
     end
   end
 
