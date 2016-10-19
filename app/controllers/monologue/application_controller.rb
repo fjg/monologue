@@ -7,11 +7,21 @@ class Monologue::ApplicationController < ApplicationController
   layout :custom_site_layout
 
   # only for front controllers
-  before_action :load_site, :force_locale,
-                :recent_posts, :all_tags,
-                :archive_posts, if: proc { |controller|
-                  !controller.class.to_s.start_with?('Monologue::Admin::')
-                }
+  before_action :load_site,
+                :force_locale, if: proc { |controller| controller.public? }
+  before_action :recent_posts, if: proc { |controller|
+    controller.public? && Monologue::Config.sidebar.try(:include?, 'latest_posts')
+  }
+  before_action :all_tags, if: proc { |controller|
+    controller.public? && Monologue::Config.sidebar.try(:include?, 'tag_cloud')
+  }
+  before_action :archive_posts, if: proc { |controller|
+    controller.public? && Monologue::Config.sidebar.try(:include?, 'archive')
+  }
+
+  def public?
+    !self.class.name.to_s.start_with?('Monologue::Admin::')
+  end
 
   def force_locale
     I18n.locale = @site.locale
