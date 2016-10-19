@@ -13,7 +13,8 @@ class Monologue::ApplicationController < ApplicationController
     controller.public? && Monologue::Config.sidebar.try(:include?, 'latest_posts')
   }
   before_action :all_tags, if: proc { |controller|
-    controller.public? && Monologue::Config.sidebar.try(:include?, 'tag_cloud')
+    controller.public? && (Monologue::Config.sidebar.try(:include?, 'tag_cloud') ||
+                           Monologue::Config.sidebar.try(:include?, 'categories'))
   }
   before_action :archive_posts, if: proc { |controller|
     controller.public? && Monologue::Config.sidebar.try(:include?, 'archive')
