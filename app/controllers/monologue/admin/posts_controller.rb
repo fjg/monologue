@@ -86,8 +86,7 @@ class Monologue::Admin::PostsController < Monologue::Admin::BaseController
   end
 
   def post_params
-    params.require(:post).permit(
-      :site_id, :published, :tag_list, :title, :content, :url, :published_at
-    )
+    params.require(:post)
+          .permit(*%i(site_id published tag_list title content cover url published_at))
   end
 end

@@ -30,6 +30,10 @@ class Monologue::Tag
     self.posts_count = posts_with_tag.size
   end
 
+  def frequency
+    posts_count
+  end
+
   def posts_with_tag
     posts.published
   end

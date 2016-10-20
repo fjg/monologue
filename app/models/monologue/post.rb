@@ -1,6 +1,8 @@
 class Monologue::Post
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Paperclip
+
   ROOT_PATH = Monologue::Engine.routes.url_helpers.root_path
 
   has_many :taggings, class_name: 'Monologue::Tagging'
@@ -38,6 +40,39 @@ class Monologue::Post
 
   index({ published_at: 1, published: 1 })
   index({ published_at: 1, published: 1, url: 1 })
+
+  has_mongoid_attached_file :cover, {
+    storage: :s3,
+    path: '/blog/:id/:',
+    url: ':s3_alias_url',
+    s3_credentials: {
+      access_key_id:     Monologue::Config.s3_access_key_id,
+      secret_access_key: Monologue::Config.s3_secret_access_key,
+    },
+    bucket:              Monologue::Config.s3_bucket,
+    s3_host_name:        Monologue::Config.s3_end_point,
+    s3_host_alias:       Monologue::Config.s3_host_alias,
+    s3_region:           Monologue::Config.s3_region,
+    s3_protocol:         '',
+
+    :styles => {
+      :large => ['600>', :jpg],
+      :medium    => ['450>',   :jpg],
+      :small   => ['300>',    :jpg],
+    },
+
+    # https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html#ExpirationDownloadDist
+    # Cache-Control apply to browser / s3
+    # Regarding CF:
+    # Minimum TTL < max-age < maximum TTL, CF caches objects for the value
+    #  of the max-age directive.
+    # max-age < minimum TTL, CF caches objects for the value
+    #  of the CF minimum TTL.
+    # max-age > maximum TTL, CF caches objects for the value
+    #  of the CF maximum TTL.
+    s3_headers:          { 'Cache-Control' => "max-age=#{1.year.to_i}" },
+  }
+  validates_attachment_content_type :cover, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   def tag_list=(tags_attr)
     tag!(tags_attr.split(','))

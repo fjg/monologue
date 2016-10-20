@@ -28,5 +28,9 @@ end
 
 gem 'coveralls', require: false
 
+gem 'mongoid-paperclip', require: 'mongoid_paperclip'
 gem 'mongoid'
+gem 'aws-sdk'
+
+# Must be included after rails & mongoid
 gem "bullet", :group => "development"

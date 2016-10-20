@@ -33,7 +33,14 @@ module Monologue
                   :gauge_analytics_site_id,
                   :layout,
                   :sidebar,
-                  :preview_size
+                  :preview_size,
+
+                  :s3_access_key_id,
+                  :s3_secret_access_key,
+                  :s3_bucket,
+                  :s3_end_point,
+                  :s3_host_alias,
+                  :s3_region
 
     def initialize
       @preview_size = 1000
