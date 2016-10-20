@@ -80,6 +80,7 @@ en:
           url:
             caption: "URL<br/><i> This will be filled by default with '%{default_url}'. You can choose your own URL. Do not add '%{root}' at the beginning of your URL.</i>"
             generated_title: "your-post-title"
+          cover: "Cover"
           published_at: "Published at"
           published: "Published"
           save: "Save"

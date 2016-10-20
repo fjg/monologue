@@ -77,6 +77,7 @@ fr:
           url:
             caption: "Adresse URL<br/><i> Ce sera rempli par défaut avec '%{default_url}'. Vous pouvez aussi choisir votre propre adresse URL. N'ajoutez pas '%{root}' au début de l'adresse URL.</i>"
             generated_title: "nom-de-votre-article"
+          cover: Couverture
           published_at: "Publié le"
           published: "Publié"
           save: "Sauvegarder"

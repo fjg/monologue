@@ -78,6 +78,7 @@ es:
           url:
             caption: "URL<br/><i> Esto será rellenado por defecto con '%{default_url}'. Puedes escoger tu propia URL. No añadas '%{root}' al principio de la URL.</i>"
             generated_title: "titulo-del-articulo"
+          cover: 'cubrir'
           published_at: "Publicado en"
           published: "Publicado?"
           save: "Guardar"
