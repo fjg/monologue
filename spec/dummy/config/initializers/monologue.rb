@@ -23,8 +23,12 @@ Monologue.config do |c|
   # c.gauge_analytics_site_id = "YOUR COGE FROM GAUG.ES"
   # c.google_analytics_id = "YOUR GA CODE"
 
-  c.sidebar = ["latest_posts", "latest_tweets", "categories", "tag_cloud", "archive"]
-
+  c.sidebar = %w(latest_posts
+                 latest_tweets
+                 categories
+                 tag_cloud
+                 archive
+                 bestoff)
 
   #SOCIAL
   c.twitter_username = "jipiboily"

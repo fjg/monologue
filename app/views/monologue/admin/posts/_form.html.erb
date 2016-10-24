@@ -8,6 +8,7 @@
 <%= post.text_field :published_at, label:  t(".published_at"), data: {datepicker: "datepicker"}, value: post.object.published_at.nil? ? "" : post.object.published_at.strftime("%Y-%m-%d") %>
 <%= post.text_field :tag_list, label:  raw(t(".tags")) %>
 <%= post.check_box :published, label:  t(".published") %>
+<%= post.check_box :bestoff, label:  t(".bestoff") %>
 
 <div class="form-actions">
   <%= post.button t(".save"), class:  "btn btn-large btn-primary" %>

@@ -20,6 +20,8 @@ de:
         title: "Letzte Tweets"
       tag_cloud:
         title: "Tags"
+      bestoff:
+        title: "Best off"
     tags:
       show:
         showing_post_with_tag: "Zeige alle Beiträge mit tag"
@@ -56,6 +58,7 @@ de:
           edit: "Bearbeiten"
           delete: "Löschen"
           published: "Yes"
+          bestoff: "Yes"
           not_published: "Nicht veröffentlicht"
           status: "Veröffentlichen ?"
           author: "Autor"

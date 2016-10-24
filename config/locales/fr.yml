@@ -20,6 +20,8 @@ fr:
         title: "Derniers tweets"
       tag_cloud:
         title: "Labels"
+      bestoff:
+        title: "Best off"
     tags:
       show:
         showing_post_with_tag: "Articles ayant le label"
@@ -54,6 +56,7 @@ fr:
           edit: "Modifier"
           delete: "Effacer"
           published: "Oui"
+          bestoff: "Oui"
           not_published: "Non publié"
           status: "Publié ?"
           author: "Auteur"

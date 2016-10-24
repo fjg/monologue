@@ -18,6 +18,10 @@ class Monologue::ApplicationController < ApplicationController
   }
   before_action :archive_posts, if: proc { |controller|
     controller.public? && Monologue::Config.sidebar.try(:include?, 'archive')
+
+  }
+  before_action :bestoff, if: proc { |controller|
+    controller.public? && Monologue::Config.sidebar.try(:include?, 'bestoff')
   }
 
   def public?
@@ -63,6 +67,10 @@ class Monologue::ApplicationController < ApplicationController
     else
       render action: '404', status: 404, formats: [:html]
     end
+  end
+
+  def bestoff
+    @bestoff = posts_for_site.published.bestoff
   end
 
   def archive_posts

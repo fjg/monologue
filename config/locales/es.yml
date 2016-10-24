@@ -20,6 +20,8 @@ es:
         title: "Últimos tweets"
       tag_cloud:
         title: "Tags"
+      bestoff:
+        title: "Best off"
     tags:
       show:
         showing_post_with_tag: "Mostrando artículos con la etiqueta"
@@ -56,6 +58,7 @@ es:
           edit: "Editar"
           delete: "Borrar"
           published: "Sí"
+          bestoff: "Sí"
           not_published: "No publicado"
           status: "Publicado?"
           author: "Autor"

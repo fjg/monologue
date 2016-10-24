@@ -20,6 +20,8 @@ pt-BR:
         title: "Tweets recentes"
       tag_cloud:
         title: "Tags"
+      bestoff:
+        title: "Best off"
     tags:
       show:
         showing_post_with_tag: "Mostrando posts com tag"
@@ -56,6 +58,7 @@ pt-BR:
           edit: "Editar"
           delete: "Deletar"
           published: "Sim"
+          bestoff: "Sim"
           not_published: "Não publicado"
           status: "Publicado?"
           author: "Autor"

@@ -20,6 +20,8 @@ tr:
         title: "Son tweeler"
       tag_cloud:
         title: "Etiketler"
+      bestoff:
+        title: "Best off"
     tags:
       show:
         showing_post_with_tag: "Bu etikete sahip gönderiler gösteriliyor"
@@ -56,6 +58,7 @@ tr:
           edit: "Düzenle"
           delete: "Sil"
           published: "Evet"
+          bestoff: "Evet"
           not_published: "Yayınlanmadı"
           status: "Yayınlandı mı?"
           author: "Yazar"

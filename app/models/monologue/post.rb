@@ -19,7 +19,8 @@ class Monologue::Post
   field :url, type: String
 
   field :published_at, type: Time
-  field :published, type: Boolean
+  field :published, type: Boolean, default: false
+  field :bestoff, type: Boolean, default: false
 
   scope :default, lambda {
     order([[:published_at, :desc], [:created_at, :desc], [:updated_at, :desc]])
@@ -27,6 +28,7 @@ class Monologue::Post
   scope :for_domain, lambda { |domain|
     where(site: Monologue::Site.where(domain: domain).first)
   }
+  scope :bestoff, lambda { where(bestoff: true) }
   scope :published, lambda {
     default.where(:published_at.lte => DateTime.now, published: true)
            .order([[:published_at, :desc]])

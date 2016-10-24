@@ -20,4 +20,8 @@ FactoryGirl.define do
   factory :post_with_tags, class: Monologue::Post, parent: :post do |post|
     post.after_create { |p| p.tag!(['Rails', 'a great tag', 'Тест']) }
   end
+
+  factory :post_in_bestoff, class: Monologue::Post, parent: :post do |post|
+    post.bestoff true
+  end
 end

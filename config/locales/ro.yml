@@ -20,6 +20,8 @@ ro:
         title: "Ultimele tweet-uri"
       tag_cloud:
         title: "Tag-uri"
+      bestoff:
+        title: "Best off"
     tags:
       show:
         showing_post_with_tag: "Articole cu tag-ul"
@@ -56,6 +58,7 @@ ro:
           edit: "Modificati"
           delete: "Stergeti"
           published: "Da"
+          bestoff: "Da"
           not_published: "Nu e publicat"
           status: "Publicat ?"
           author: "Autor"
