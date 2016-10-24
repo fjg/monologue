@@ -38,10 +38,10 @@ class Monologue::Tag
     s3_protocol:         '',
 
     :styles => { # grid system aliases
-      :max_300 => ['300>',    :jpg],  # col-sm-4
-      :max_227 => ['227>',   :jpg],   # col-sm-3
-      :max_150 => ['150>', :jpg],     # col-sm-2
-      :max_32  => ['32>',    :jpg],   # thumb
+      :max_300 => ['300>'],  # col-sm-4
+      :max_227 => ['227>'],   # col-sm-3
+      :max_150 => ['150>'],     # col-sm-2
+      :max_32  => ['32>'],   # thumb
     },
 
     # https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html#ExpirationDownloadDist
