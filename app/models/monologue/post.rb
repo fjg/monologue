@@ -45,7 +45,7 @@ class Monologue::Post
 
   has_mongoid_attached_file :cover, {
     storage: :s3,
-    path: '/blog/:id/:',
+    path: '/blog/:id/:style-:basename.:extension',
     url: ':s3_alias_url',
     s3_credentials: {
       access_key_id:     Monologue::Config.s3_access_key_id,
