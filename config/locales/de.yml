@@ -28,6 +28,11 @@ de:
         show_all_posts: "Zeige alle Beiträge"
     admin:
       tags:
+        index:
+          name: "Name"
+          posts_count: 'Post count'
+          edit: "Edit"
+          delete: "Delete"
         form:
           bestoff: "Is bestoff"
           icon: "Icon"

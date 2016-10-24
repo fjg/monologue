@@ -28,6 +28,11 @@ pt-BR:
         show_all_posts: "Mostrar todos posts"
     admin:
       tags:
+        index:
+          name: "Name"
+          posts_count: 'Post count'
+          edit: "Edit"
+          delete: "Delete"
         form:
           bestoff: "Is bestoff"
           icon: "Icon"
