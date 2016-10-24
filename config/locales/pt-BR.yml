@@ -27,6 +27,11 @@ pt-BR:
         showing_post_with_tag: "Mostrando posts com tag"
         show_all_posts: "Mostrar todos posts"
     admin:
+      tags:
+        form:
+          bestoff: "Is bestoff"
+          icon: "Icon"
+          save: "Save"
       login:
         need_auth: "É necessário estar logado"
       users:
@@ -106,6 +111,7 @@ pt-BR:
         nav_bar:
           add_a_monologue: "Criar post"
           list_monologues: "Listar posts"
+          tags: Tags
           comments: "Comentários"
           cache: "Gerenciar cache"
           edit_user_info: "Minha conta"

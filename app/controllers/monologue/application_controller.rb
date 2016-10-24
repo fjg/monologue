@@ -50,7 +50,7 @@ class Monologue::ApplicationController < ApplicationController
 
   def all_tags
     @tags = tags_for_site.where(:posts_count.gt => 0)
-                          .order([:name, :asc])
+                          .order([:posts_count, :asc])
                           .entries
 
     # could use minmax here but it's only supported with ruby > 1.9'

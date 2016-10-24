@@ -27,6 +27,11 @@ es:
         showing_post_with_tag: "Mostrando artículos con la etiqueta"
         show_all_posts: "Mostrar todos los artículos"
     admin:
+      tags:
+        form:
+          bestoff: "Is bestoff"
+          icon: "Icon"
+          save: "Save"
       login:
         need_auth: "Tienes que iniciar sesión para acceder a la sección de administración"
       users:
@@ -119,6 +124,7 @@ es:
         nav_bar:
           add_a_monologue: "Añadir un artículo"
           list_monologues: "Lista de artículos"
+          tags: Tags
           comments: "Commentarios"
           cache: "Gestionar cache"
           edit_user_info: "Mi cuenta"

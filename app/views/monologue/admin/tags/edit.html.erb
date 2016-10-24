@@ -1,0 +1,4 @@
+<h1><%= t(".header") %> "<%= @tag.name %>"</h1>
+<%= monologue_admin_form_for ["admin", @tag], method: :put do |tag| %>
+  <%= render partial: 'form', locals: {tag: tag} %>
+<% end %>

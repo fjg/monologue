@@ -1,0 +1,10 @@
+<%= tag.error_messages %>
+<%= image_tag @tag.icon.url(:max_300) %>
+<%= tag.file_field :icon, label: t('.icon'), class: "span6" %>
+<%= tag.check_box :bestoff, label:  t(".bestoff") %>
+
+<div class="form-actions">
+  <%= tag.button t(".save"), class:  "btn btn-large btn-primary" %>
+  <%= tag.button t(".preview"), class: "btn btn-large", type: "button", value: "preview"%>
+</div>
+

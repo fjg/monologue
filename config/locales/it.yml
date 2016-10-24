@@ -27,6 +27,11 @@ it:
         showing_post_with_tag: "Lista dei post con etichetta"
         show_all_posts: "Mostra tutti i post"
     admin:
+      tags:
+        form:
+          bestoff: "Is bestoff"
+          icon: "Icon"
+          save: "Save"
       login:
         need_auth: "Devi prima effettuare il login per accedere alla sezione admin."
       users:
@@ -106,6 +111,7 @@ it:
         nav_bar:
           add_a_monologue: "Aggiungi un monologue"
           list_monologues: "Lista di monologues"
+          tags: Tags
           comments: "Commenti"
           cache: "Gestisci cache"
           edit_user_info: "Il mio account"

@@ -15,6 +15,7 @@ Monologue::Engine.routes.draw do
     resources :posts
     resources :sites
     resources :users
+    resources :tags, only: [:edit, :update, :index]
     get 'comments' => 'comments#show', as: 'comments'
 
     match '/post/preview' => 'posts#preview',

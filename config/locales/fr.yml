@@ -27,6 +27,11 @@ fr:
         showing_post_with_tag: "Articles ayant le label"
         show_all_posts: "Voir tous les articles"
     admin:
+      tags:
+        form:
+          bestoff: "Is bestoff"
+          icon: "Icon"
+          save: "Save"
       login:
         need_auth: "Vous devez d'abord vous connectez à la section d'administration."
       users:
@@ -139,6 +144,7 @@ fr:
           list_sites: "Sites"
           add_a_monologue: "Ajouter un article"
           list_monologues: "Liste des articles"
+          tags: Tags
           comments: "Commentaires"
           cache: "Gérer la cache"
           edit_user_info: "Mon compte"

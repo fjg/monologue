@@ -27,6 +27,11 @@ ro:
         showing_post_with_tag: "Articole cu tag-ul"
         show_all_posts: "Toate articolele"
     admin:
+      tags:
+        form:
+          bestoff: "Is bestoff"
+          icon: "Icon"
+          save: "Save"
       login:
         need_auth: "Pentru a accesa aceasta pagina, trebuie sa va autentificati."
       users:
@@ -106,6 +111,7 @@ ro:
         nav_bar:
           add_a_monologue: "Adaugati articol"
           list_monologues: "Lista articole"
+          tags: Tags
           comments: "Comentarii"
           cache: "Gestionati cache"
           edit_user_info: "Contul meu"

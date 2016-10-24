@@ -27,6 +27,11 @@ de:
         showing_post_with_tag: "Zeige alle Beiträge mit tag"
         show_all_posts: "Zeige alle Beiträge"
     admin:
+      tags:
+        form:
+          bestoff: "Is bestoff"
+          icon: "Icon"
+          save: "Save"
       login:
         need_auth: "Sie müssen sich erst anmelden um in den Admin-Bereich zu kommen"
       users:
@@ -106,6 +111,7 @@ de:
         nav_bar:
           add_a_monologue: "Monologue hinzufügen"
           list_monologues: "Liste der Monologue"
+          tags: "Tags"
           comments: "Kommentare"
           cache: "Cache managen"
           edit_user_info: "Mein Zugang"
