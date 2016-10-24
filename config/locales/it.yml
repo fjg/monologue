@@ -28,6 +28,8 @@ it:
         show_all_posts: "Mostra tutti i post"
     admin:
       tags:
+        edit:
+          header: 'Edit'
         index:
           name: "Name"
           posts_count: 'Post count'

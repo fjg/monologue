@@ -28,6 +28,8 @@ tr:
         show_all_posts: "Bütün göderileri göster"
     admin:
       tags:
+        edit:
+          header: 'Edit'
         index:
           name: "Name"
           posts_count: 'Post count'

@@ -28,6 +28,8 @@ pt-BR:
         show_all_posts: "Mostrar todos posts"
     admin:
       tags:
+        edit:
+          header: 'Edit'
         index:
           name: "Name"
           posts_count: 'Post count'

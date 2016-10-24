@@ -28,6 +28,8 @@ ro:
         show_all_posts: "Toate articolele"
     admin:
       tags:
+        edit:
+          header: 'Edit'
         index:
           name: "Name"
           posts_count: 'Post count'
