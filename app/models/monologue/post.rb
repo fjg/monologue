@@ -56,9 +56,10 @@ class Monologue::Post
     s3_protocol:         '',
 
     :styles => {
-      :large => ['600>', :jpg],
-      :medium    => ['450>',   :jpg],
+      :large => ['600>', :jpg], # post index desktop
+      :medium    => ['450>',   :jpg], # post index mobile
       :small   => ['300>',    :jpg],
+      :sidebar   => ['150>',    :jpg], # sidebar widgets
     },
 
     # https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html#ExpirationDownloadDist
