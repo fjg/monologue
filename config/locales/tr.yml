@@ -58,7 +58,7 @@ tr:
           edit: "Düzenle"
           delete: "Sil"
           published: "Evet"
-          bestoff: "Evet"
+          bestoff: "bestoff"
           not_published: "Yayınlanmadı"
           status: "Yayınlandı mı?"
           author: "Yazar"

@@ -58,7 +58,6 @@ es:
           edit: "Editar"
           delete: "Borrar"
           published: "Sí"
-          bestoff: "Sí"
           not_published: "No publicado"
           status: "Publicado?"
           author: "Autor"
@@ -84,6 +83,7 @@ es:
           cover: 'cubrir'
           published_at: "Publicado en"
           published: "Publicado?"
+          bestoff: "bestoff"
           save: "Guardar"
           preview: "Vista previa"
           close: "Cerrar"
