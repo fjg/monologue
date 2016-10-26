@@ -24,25 +24,15 @@ class Monologue::Tag
   index(site: 1)
 
   has_mongoid_attached_file :icon, {
-    storage: :s3,
-    path: '/tag/:id/:style-:basename.:extension',
-    url: ':s3_alias_url',
-    s3_credentials: {
-      access_key_id:     Monologue::Config.s3_access_key_id,
-      secret_access_key: Monologue::Config.s3_secret_access_key,
+    styles: {            # grid system aliases
+      max_300: ['300>'], # col-sm-4
+      max_227: ['227>'], # col-sm-3
+      max_150: ['150>'], # col-sm-2
+      max_32: ['32>'],   # thumb
     },
-    bucket:              Monologue::Config.s3_bucket,
-    s3_host_name:        Monologue::Config.s3_end_point,
-    s3_host_alias:       Monologue::Config.s3_host_alias,
-    s3_region:           Monologue::Config.s3_region,
-    s3_protocol:         '',
 
-    :styles => { # grid system aliases
-      :max_300 => ['300>'],  # col-sm-4
-      :max_227 => ['227>'],   # col-sm-3
-      :max_150 => ['150>'],     # col-sm-2
-      :max_32  => ['32>'],   # thumb
-    },
+    path: '/tag/:id/:style-:basename.:extension',
+    url: ':s3_alias_url', # Cloud Front
 
     # https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html#ExpirationDownloadDist
     # Cache-Control apply to browser / s3
@@ -53,10 +43,19 @@ class Monologue::Tag
     #  of the CF minimum TTL.
     # max-age > maximum TTL, CF caches objects for the value
     #  of the CF maximum TTL.
+    storage:             :s3,
+    s3_credentials: {
+      access_key_id:     Monologue::Config.s3_access_key_id,
+      secret_access_key: Monologue::Config.s3_secret_access_key,
+    },
     s3_headers:          { 'Cache-Control' => "max-age=#{1.year.to_i}" },
+    bucket:              Monologue::Config.s3_bucket,
+    s3_host_name:        Monologue::Config.s3_end_point,
+    s3_host_alias:       Monologue::Config.s3_host_alias,
+    s3_region:           Monologue::Config.s3_region,
+    s3_protocol:         ''
   }
   validates_attachment_content_type :icon, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
-
 
   before_save do
     self.name_downcase = name.to_s.downcase
@@ -64,7 +63,7 @@ class Monologue::Tag
   end
 
   def update_posts_count
-    self.posts_count = posts_with_tag.size
+    self.posts_count = posts_with_tag.count
   end
 
   def frequency
